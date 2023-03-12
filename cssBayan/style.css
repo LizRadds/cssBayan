@@ -1,7 +1,11 @@
 :root{
     --btn-height-width: 40px;
 }
-
+label{
+    justify-content: space-between;
+    flex-direction: row;
+    display: flex;
+}
 body{
     margin: 100px auto;
     width: calc(100% - 100px);
@@ -9,30 +13,28 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    max-width: 1280px;
 }
 .accordion-container{
-    color: blue;
     cursor: pointer;
     
 }
 .accordion-header{
-    height: 60px;
+    height: 80px;
+
     margin-top: auto;
     margin-bottom: auto;
     align-items: center;
-    
+    width: calc(100% - 60px);
     justify-content: center;
     
 }
 h2{
     vertical-align: middle;
     line-height: 60px;
+    width: calc(100% - 100px);
 }
-.accordion-container::before { 
-    width:100%; 
-    height: 15px; 
-    background: #fe0000; 
-    content:"" }
+
 
 .accordion-container:hover{
     opacity: 0.7;
@@ -60,7 +62,31 @@ h2{
     max-width: auto;
     display: flex;
 }
-.accordion-body{
-    height: 540px;
-    display: flex;
+
+
+input + label + .content {
+    display: none;
+}
+
+input:checked + label + .content {
+    display: block;
+    transition: all 0.3s ease-in-out;
+}
+.accordion-header::after {
+    content: '\002B';
+    padding: 0.51rem;
+    transform: scale(1.8);
+    text-align: center;
+    transition: all 0.35s;
+    margin-right: 0;
+    justify-content: space-between;
+}
+input:checked + .accordion-header::after {
+    content: '\2013';
+    transform: scale(1.5);
+}
+input {
+    position: absolute;   
+    opacity: 0;
+    z-index: -1;
 }
