@@ -1,3 +1,66 @@
+:root{
+    --btn-height-width: 40px;
+}
+
 body{
-    margin: 100px;
+    margin: 100px auto;
+    width: calc(100% - 100px);
+    justify-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.accordion-container{
+    color: blue;
+    cursor: pointer;
+    
+}
+.accordion-header{
+    height: 60px;
+    margin-top: auto;
+    margin-bottom: auto;
+    align-items: center;
+    
+    justify-content: center;
+    
+}
+h2{
+    vertical-align: middle;
+    line-height: 60px;
+}
+.accordion-container::before { 
+    width:100%; 
+    height: 15px; 
+    background: #fe0000; 
+    content:"" }
+
+.accordion-container:hover{
+    opacity: 0.7;
+}
+.header{
+    display: flex;
+
+}
+.meme-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.meme-btn{
+    width: var(--btn-height-width);
+    height: var(--btn-height-width);
+    background-image: url(./assets/svg/plus.svg);
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.meme-img{
+    max-height: 100%;
+    max-width: auto;
+    display: flex;
+}
+.accordion-body{
+    height: 540px;
+    display: flex;
 }
